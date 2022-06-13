@@ -111,7 +111,7 @@ public class CarTest {
 		System.out.println("----------------------------------------------------------------------------------------------");
 		
 		for (int i = 1; i < 5; i++) {
-			((Car)map.get(i+"")).go(20);
+			((Car)map.get(i+"")).go(80);
 		}
 		
 		for (int i = 1; i <= 4; i++) {
