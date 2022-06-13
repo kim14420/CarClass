@@ -1,11 +1,13 @@
 package exam7;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class CarTest {
 
 	public static void main(String[] args) {
 		
+		Scanner in = new Scanner(System.in);
 		HashMap <String, Object>map = new HashMap<String, Object>();
 		
 		L1 car1 = new L1();
@@ -21,7 +23,7 @@ public class CarTest {
 		car2.setName("Cruse");
 		car2.setEngineSize("2000");
 		car2.setOilTank(75);
-		car2.setOilSize(30);
+		car2.setOilSize(35);
 		car2.setDistance(0);
 		
 		map.put("2", car2);
@@ -43,76 +45,49 @@ public class CarTest {
 		car4.setDistance(0);
 		
 		map.put("4", car4);
+	
 		
-//		System.out.println("vehicleName\tengineSize\toilTank\toilSize\tdistance");
-//		System.out.println("-----------------------------------------------------------------------------------");
-//		for (int i = 1; i <= 4; i++) {
-//			System.out.println(map.get(i+""));
-//		}
-//		
-//		
-//		System.out.println("\n\n30 주유");
-//		for (int i = 1; i <= 4; i++) {
-//			((Car)map.get(i+"")).setOil(30);
-//		}
-//		
-//		
-//		System.out.println("\n\n20 주행");
-//		for (int i = 1; i <= 4; i++) {
-//			((Car)map.get(i+"")).go(20);
-//		}
-
-//		System.out.println("vehicleName\tengineSize\toilTank\toilSize\tdistance\ttemperature");
-//		System.out.println("-----------------------------------------------------------------------------------");
-//		for (int i = 1; i <= 4; i++) {
-//			String key = i+"";
-//			System.out.println(map.get(key));
-//			
-//			switch(key) {
-//			case "1":
-//				System.out.println("\t" + ((L1)map.get(key)).getTempGage());
-//				break;
-//			case "2":
-//				System.out.println("\t" + ((L2)map.get(key)).getTempGage());
-//				break;
-//			case "3":
-//				System.out.println("\t" + ((L3)map.get(key)).getTempGage());
-//				break;
-//			case "4":
-//				System.out.println("\t" + ((L4)map.get(key)).getTempGage());
-//				break;
-//				
-//			}
-//		}
-		
-		System.out.println("vehicleName" + "\tengineSize"+ "\toilTank" +  "\t\toilSize" + "\t\tdistance");
-		System.out.println("----------------------------------------------------------------------------");
+	System.out.println("vehicleName" + "\tengineSize"+ "\toilTank" +  "\t\toilSize" + "\t\tdistance");
+	System.out.println("----------------------------------------------------------------------------");
 		
 		for (int i = 1; i < 5; i++) {
 			System.out.println(map.get(""+i));
 		}
 		
-		System.out.println();
-		System.out.println("30 주유");
-		System.out.println("vehicleName" + "\tengineSize"+ "\toilTank" +  "\t\toilSize" + "\t\tdistance");
-		System.out.println("----------------------------------------------------------------------------");
+		
+	System.out.println();
+	System.out.print("주유하실 양을 입력해주세요: ");
+		
+		int fuel = 0;
+		fuel = in.nextInt();
 		
 		for (int i = 1; i < 5; i++) {
-			((Car)map.get(i+"")).setOil(30);
+			((Car)map.get(i+"")).setOil(fuel);
 		}
 		
+	System.out.println();
+	System.out.println("vehicleName" + "\tengineSize"+ "\toilTank" +  "\t\toilSize" + "\t\tdistance");
+	System.out.println("----------------------------------------------------------------------------");
+	
 		for (int i = 1; i < 5; i++) {
 			System.out.println(map.get(""+i));
 		}
 		
-		System.out.println();
-		System.out.println("80 주행");
-		System.out.println("vehicleName" + "\tengineSize"+ "\toilTank" +  "\t\toilSize" + "\t\tdistance" + "\ttemperature");
-		System.out.println("----------------------------------------------------------------------------------------------");
+	System.out.println();
+	System.out.print("주행 할 거리를 입력해주세요: ");
+		
+		int dist = 0;
+		dist = in.nextInt();
 		
 		for (int i = 1; i < 5; i++) {
-			((Car)map.get(i+"")).go(80);
+			((Car)map.get(i+"")).go(dist);
 		}
+		
+		in.close();
+		
+	System.out.println();
+	System.out.println("vehicleName" + "\tengineSize"+ "\toilTank" +  "\t\toilSize" + "\t\tdistance" + "\ttemperature");
+	System.out.println("----------------------------------------------------------------------------------------------");
 		
 		for (int i = 1; i <= 4; i++) {
 			String key = i+"";
